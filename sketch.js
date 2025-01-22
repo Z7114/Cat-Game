@@ -96,76 +96,77 @@ function draw() {
   // all Agnes ^^
   checkCatState(); // using function to check for input states
 
-  // if (catState[0] == 0 && catState[1] == 0 && catState[2] == 0 && catState[3] == 0) {
-  //   selectedPose = 2; // night mode
-  // } else if (catState[0] == 0 && catState[1] == 0 && catState[2] == 0 && catState[3] == 1) {
-  //   selectedPose = 8; // night mode (NM)
-  // } else if (catState[0] == 0 && catState[1] == 0 && catState[2] == 1 && catState[3] == 0) {
-  //   selectedPose = 8; // NM
-  // } else if (catState[0] == 0 && catState[1] == 0 && catState[2] == 1 && catState[3] == 1) {
-  //   selectedPose = 1; // NM
-  // } else if (catState[0] == 0 && catState[1] == 1 && catState[2] == 0 && catState[3] == 0) {
-  //   selectedPose = 0; // NM
-  // } else if (catState[0] == 0 && catState[1] == 1 && catState[2] == 0 && catState[3] == 1) {
-  //   selectedPose = 7; // different background, NM
-  // } else if (catState[0] == 0 && catState[1] == 1 && catState[2] == 1 && catState[3] == 0) {
-  //   selectedPose = 6; // NM
-  // } else if (catState[0] == 0 && catState[1] == 1 && catState[2] == 1 && catState[3] == 1) {
-  //   selectedPose = 6; // NM
-  // } else if (catState[0] == 1 && catState[1] == 0 && catState[2] == 0 && catState[3] == 0) {
-  //   selectedPose = 5; // resize image
-  // } else if (catState[0] == 1 && catState[1] == 0 && catState[2] == 0 && catState[3] == 1) {
-  //   selectedPose = 0; //
-  // } else if (catState[0] == 1 && catState[1] == 0 && catState[2] == 1 && catState[3] == 0) {
-  //   selectedPose = 9; //
-  // } else if (catState[0] == 1 && catState[1] == 0 && catState[2] == 1 && catState[3] == 1) {
-  //   selectedPose = 1; //
-  // } else if (catState[0] == 1 && catState[1] == 1 && catState[2] == 0 && catState[3] == 0) {
-  //   selectedPose = 0; //
-  // } else if (catState[0] == 1 && catState[1] == 1 && catState[2] == 0 && catState[3] == 1) {
-  //   selectedPose = 4; //
-  // } else if (catState[0] == 1 && catState[1] == 1 && catState[2] == 1 && catState[3] == 0) {
-  //   selectedPose = 7; // different bg
-  // } else if (catState[0] == 1 && catState[1] == 1 && catState[2] == 1 && catState[3] == 1) {
-  //   selectedPose = 1; //
-  // }
-
-
-  // this is wrong! it's calling the variable in the array, not it's value!!
-  if (catState[0, 0, 0, 0]) {
+  if (catState[0] == 0 && catState[1] == 0 && catState[2] == 0 && catState[3] == 0) {
     selectedPose = 2; // night mode
-  } else if (catState[0, 0, 0, 1]) {
+  } else if (catState[0] == 0 && catState[1] == 0 && catState[2] == 0 && catState[3] == 1) {
     selectedPose = 8; // night mode (NM)
-  } else if (catState[0, 0, 1, 0]) {
+  } else if (catState[0] == 0 && catState[1] == 0 && catState[2] == 1 && catState[3] == 0) {
     selectedPose = 8; // NM
-  } else if (catState[0, 0, 1, 1]) {
+  } else if (catState[0] == 0 && catState[1] == 0 && catState[2] == 1 && catState[3] == 1) {
     selectedPose = 1; // NM
-  } else if (catState[0, 1, 0, 0]) {
+  } else if (catState[0] == 0 && catState[1] == 1 && catState[2] == 0 && catState[3] == 0) {
     selectedPose = 0; // NM
-  } else if (catState[0, 1, 0, 1]) {
+  } else if (catState[0] == 0 && catState[1] == 1 && catState[2] == 0 && catState[3] == 1) {
     selectedPose = 7; // different background, NM
-  } else if (catState[0, 1, 1, 0]) {
+  } else if (catState[0] == 0 && catState[1] == 1 && catState[2] == 1 && catState[3] == 0) {
     selectedPose = 6; // NM
-  } else if (catState[0, 1, 1, 1]) {
+  } else if (catState[0] == 0 && catState[1] == 1 && catState[2] == 1 && catState[3] == 1) {
     selectedPose = 6; // NM
-  } else if (catState[1, 0, 0, 0]) {
+  } else if (catState[0] == 1 && catState[1] == 0 && catState[2] == 0 && catState[3] == 0) {
     selectedPose = 5; // resize image
-  } else if (catState[1, 0, 0, 1]) {
+  } else if (catState[0] == 1 && catState[1] == 0 && catState[2] == 0 && catState[3] == 1) {
     selectedPose = 0; //
-  } else if (catState[1, 0, 1, 0]) {
+  } else if (catState[0] == 1 && catState[1] == 0 && catState[2] == 1 && catState[3] == 0) {
     selectedPose = 9; //
-  } else if (catState[1, 0, 1, 1]) {
+  } else if (catState[0] == 1 && catState[1] == 0 && catState[2] == 1 && catState[3] == 1) {
     selectedPose = 1; //
-  } else if (catState[1, 1, 0, 0]) {
+  } else if (catState[0] == 1 && catState[1] == 1 && catState[2] == 0 && catState[3] == 0) {
     selectedPose = 0; //
-  } else if (catState[1, 1, 0, 1]) {
+  } else if (catState[0] == 1 && catState[1] == 1 && catState[2] == 0 && catState[3] == 1) {
     selectedPose = 4; //
-  } else if (catState[1, 1, 1, 0]) {
+  } else if (catState[0] == 1 && catState[1] == 1 && catState[2] == 1 && catState[3] == 0) {
     selectedPose = 7; // different bg
-  } else if (catState[1, 1, 1, 1]) {
+  } else if (catState[0] == 1 && catState[1] == 1 && catState[2] == 1 && catState[3] == 1) {
     selectedPose = 1; //
   }
 
+
+  // this is wrong! it's calling the variable in the array, not it's value!!
+  // if (catState[0, 0, 0, 0]) {
+  //   selectedPose = 2; // night mode
+  // } else if (catState[0, 0, 0, 1]) {
+  //   selectedPose = 8; // night mode (NM)
+  // } else if (catState[0, 0, 1, 0]) {
+  //   selectedPose = 8; // NM
+  // } else if (catState[0, 0, 1, 1]) {
+  //   selectedPose = 1; // NM
+  // } else if (catState[0, 1, 0, 0]) {
+  //   selectedPose = 0; // NM
+  // } else if (catState[0, 1, 0, 1]) {
+  //   selectedPose = 7; // different background, NM
+  // } else if (catState[0, 1, 1, 0]) {
+  //   selectedPose = 6; // NM
+  // } else if (catState[0, 1, 1, 1]) {
+  //   selectedPose = 6; // NM
+  // } else if (catState[1, 0, 0, 0]) {
+  //   selectedPose = 5; // resize image
+  // } else if (catState[1, 0, 0, 1]) {
+  //   selectedPose = 0; //
+  // } else if (catState[1, 0, 1, 0]) {
+  //   selectedPose = 9; //
+  // } else if (catState[1, 0, 1, 1]) {
+  //   selectedPose = 1; //
+  // } else if (catState[1, 1, 0, 0]) {
+  //   selectedPose = 0; //
+  // } else if (catState[1, 1, 0, 1]) {
+  //   selectedPose = 4; //
+  // } else if (catState[1, 1, 1, 0]) {
+  //   selectedPose = 7; // different bg
+  // } else if (catState[1, 1, 1, 1]) {
+  //   selectedPose = 1; //
+  // }
+
+  console.log(catState);
 
   // draws cat
   // remeber to create if statement that check for trust cat pose (for resizing the image)
@@ -269,12 +270,13 @@ function checkCatState() {
     let data = values;
     // console.log("Values: " + values);
   
-  for (let i = 0; i < values; i++) {
+  for (let i = 0; i < values.length; i++) {
+    if (i < numInputs) {
       a = data[0];
       b = data[1];
 
-      console.log(a);
-      console.log(b);
+      // console.log(a);
+      // console.log(b);
 
       if (a < 600) {
         catState[2] = 0;
@@ -292,5 +294,7 @@ function checkCatState() {
     }
   }
 }
+}
 
 // return(catState);
+
