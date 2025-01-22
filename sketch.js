@@ -24,13 +24,13 @@ let values = [];
 let a, b;
 
 // input states ??
-let gesture;
-let noise;
 let light;
+let sound;
 let touch;
+let gesture;
 
 // storing input data (with Agnes' help XD)
-let catState = [gesture, noise, light, touch];
+let catState = [light, sound, touch, gesture];
 
 
 function preload() {
@@ -85,7 +85,6 @@ function setup() {
   connectBtn.mousePressed(connectBtnClick);
 
 
-
 }
 
 
@@ -130,47 +129,11 @@ function draw() {
     selectedPose = 1; //
   }
 
-
-  // this is wrong! it's calling the variable in the array, not it's value!!
-  // if (catState[0, 0, 0, 0]) {
-  //   selectedPose = 2; // night mode
-  // } else if (catState[0, 0, 0, 1]) {
-  //   selectedPose = 8; // night mode (NM)
-  // } else if (catState[0, 0, 1, 0]) {
-  //   selectedPose = 8; // NM
-  // } else if (catState[0, 0, 1, 1]) {
-  //   selectedPose = 1; // NM
-  // } else if (catState[0, 1, 0, 0]) {
-  //   selectedPose = 0; // NM
-  // } else if (catState[0, 1, 0, 1]) {
-  //   selectedPose = 7; // different background, NM
-  // } else if (catState[0, 1, 1, 0]) {
-  //   selectedPose = 6; // NM
-  // } else if (catState[0, 1, 1, 1]) {
-  //   selectedPose = 6; // NM
-  // } else if (catState[1, 0, 0, 0]) {
-  //   selectedPose = 5; // resize image
-  // } else if (catState[1, 0, 0, 1]) {
-  //   selectedPose = 0; //
-  // } else if (catState[1, 0, 1, 0]) {
-  //   selectedPose = 9; //
-  // } else if (catState[1, 0, 1, 1]) {
-  //   selectedPose = 1; //
-  // } else if (catState[1, 1, 0, 0]) {
-  //   selectedPose = 0; //
-  // } else if (catState[1, 1, 0, 1]) {
-  //   selectedPose = 4; //
-  // } else if (catState[1, 1, 1, 0]) {
-  //   selectedPose = 7; // different bg
-  // } else if (catState[1, 1, 1, 1]) {
-  //   selectedPose = 1; //
-  // }
-
   console.log(catState);
 
   // draws cat
   // remeber to create if statement that check for trust cat pose (for resizing the image)
-  image(catPoses[selectedPose], 170, 250, 400, 400)
+  image(catPoses[selectedPose], 170, 280, 400, 400)
 
 
   // for (let i = 0; i < hands.length; i ++) {
@@ -217,7 +180,6 @@ function draw() {
 }
 
 
-
 // callback function for when handPose outputs data
 function gotHands(results) {
   // save the output to the hands variable
@@ -236,6 +198,7 @@ function connectBtnClick() {
   }
 }
 
+
 function checkCatState() {
   // checking gesture state // WORKS
   for (let i = 0; i < hands.length; i ++) {
@@ -246,13 +209,13 @@ function checkCatState() {
   // condition for gesture state
     if (wrist.y > 300) { // checking wrist y coord for raised hand
       // arm raised = smaller number
-      catState[0] = 0;
+      catState[3] = 0;
     } else {
-      catState[0] = 1;
+      catState[3] = 1;
     }
   }
 
-  // checking noise state // WORKS
+  // checking sound state // WORKS
   let vol = mic.getLevel(); // get audio data from mic
   if (vol < 0.3) { // checking for loud or quiet sound
     catState[1] = 0;
@@ -278,17 +241,18 @@ function checkCatState() {
       // console.log(a);
       // console.log(b);
 
+      // check light state // WORKS
       if (a < 600) {
+        catState[0] = 0;
+      } else {
+        catState[0] = 1;
+      }
+    
+      // checking touch state // WORKS
+      if (b == 0) {
         catState[2] = 0;
       } else {
         catState[2] = 1;
-      }
-    
-      // checking touch state
-      if (b == 0) {
-        catState[3] = 0;
-      } else {
-        catState[3] = 1;
       }
       
     }
@@ -296,5 +260,4 @@ function checkCatState() {
 }
 }
 
-// return(catState);
 
