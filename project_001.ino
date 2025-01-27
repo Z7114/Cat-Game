@@ -40,35 +40,7 @@ void loop() {
   delay(50);
   // **
 
-  // if (MPR121.getTouchData(1) == HIGH) {
-  //     Serial.println( " TOUCHING" );
-  //   } else {
-  //     Serial.println("NOT TOUCHING");
-  //   }
-
-  // // establishing light and darkness
-  // if (analogRead(light) > 400) {
-  //   Serial.println(", Light");
-  // } else {
-  //   Serial.println(", Dark");
-  // }
-
-  // // creating condition for light level and touch
-  // if (ldrValue > 500) {
-  //   if (MPR121.getTouchData(1)) {
-  //     Serial.println( " - Can touch" );
-  //   } // else {
-  //   //   Serial.println("Not touching");
-  //   // }
-  // } else {
-  //     if (MPR121.getTouchData(1)) {
-  //       Serial.println( " - No touching!" );
-  //     }
-  //   }
-  }
-
-// touch value = 626, no touch = 646/7
-
+}
 
 
 
