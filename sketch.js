@@ -135,48 +135,6 @@ function draw() {
   // remeber to create if statement that check for trust cat pose (for resizing the image)
   image(catPoses[selectedPose], 170, 280, 400, 400)
 
-
-  // for (let i = 0; i < hands.length; i ++) {
-  //   let hand = hands[i];
-  // // defining individual points
-  // let index = hand.index_finger_tip;
-  // let thumb = hand.thumb_tip;
-  // let middle = hand.middle_finger_tip;
-  // let ring = hand.ring_finger_tip;
-  // let pinky = hand.pinky_finger_tip;
-  // let wrist = hand.wrist;
-
-
-  // // getting distance between points
-  // let d = dist(index.x, index.y, thumb.x, thumb.y);
-  // let z = dist(middle.x, middle.y, thumb.x, thumb.y);
-  // // console.log(wrist.x, wrist.y);
-
-  // // console.log(d, z);
-  // // Store selected image (help from Will + Irti)
-
-  // // condition for drawing to display based on keypoint distance
-  //   if (d < 20 && z > 20) {
-  //   // image(catPoses[2], 170, 250, 400, 400);
-  //   selectedPose = 2;
-  //   }
-  
-  //   if (z < 20 && d > 20) {
-  //   // image(catPoses[4], 170, 250, 400, 400);
-  //   selectedPose = 0;
-  //   }
-    
-
-  // if (hands.length > 0) {
-  //   hand = hands[0];
-  //   let index = hand.index_finger_tip;
-  //   let indexA = hand.index_finger_mcp;
-
-  //   if (index.y > indexA.y) {
-  //     selectedPose = 4;
-  //   }
-  // }
-
 }
 
 
@@ -237,9 +195,7 @@ function checkCatState() {
     if (i < numInputs) {
       a = data[0];
       b = data[1];
-
-      // console.log(a);
-      // console.log(b);
+      
 
       // check light state // WORKS
       if (a < 600) {
